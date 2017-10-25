@@ -1,3 +1,13 @@
-<p>
-  movie works!
-</p>
+<div *ngIf="!movie">
+  loading
+</div>
+<div *ngIf="movie">
+  <header class="movie-header">
+    <div *ngIf="!poster_path">
+      labas
+    </div>
+    <div *ngIf="movie.poster_path">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="movie-thumb">
+    </div>
+  </header>
+</div>

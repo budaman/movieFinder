@@ -32,7 +32,6 @@ searchResults: Movies[]
     this.movieDBService.searchMovie(this.searchStr)
     .subscribe(res => {
       this.searchResults = res.results
-      console.log(this.searchResults)
     })
   }
 

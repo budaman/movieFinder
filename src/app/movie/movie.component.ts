@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieDBService } from '../services/movieDB.service'
-import { ActivatedRoute, Params, Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 
 import { Movies } from '../models/Movies'
