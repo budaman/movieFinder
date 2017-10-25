@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
-import { MovieDBService } from './services/movieDB.service'
+import { MovieDBService } from './services/movieDB.service';
+import { MovieComponent } from './movie/movie.component'
 
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
-  {path: '', component: SearchComponent}
+  {path: '', component: SearchComponent},
+  {path: 'movie/:id', component: MovieComponent}
 ]
 
 @NgModule({
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
