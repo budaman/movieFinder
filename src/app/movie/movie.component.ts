@@ -21,6 +21,11 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.movieDBService.getGenre()
+    .subscribe(res => {
+      this.genres = res.genres
+      console.log(this.genres)
+    })
     this.route.params
     .map(params => params['id'])
     .subscribe((id)=> {
@@ -30,6 +35,13 @@ export class MovieComponent implements OnInit {
         console.log(this.movie)
       })
     })
+  }
+
+  getGenre(genre) {
+    let gen = this.genres.find(item => item.id === genre)
+    if(gen) {
+      return gen.name
+    }
   }
 
 }

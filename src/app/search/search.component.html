@@ -1,5 +1,5 @@
-<h1>Find your favorite Artist here!</h1>
-<p>Using Artist Finder you can easily find newest product of any Artist or Band</p>
+<h1>Find A Movie</h1>
+<p>Using Movie Finder you can easily find old and new movies just in seconds</p>
 
 <form>
   <div class="form-group">
@@ -16,11 +16,10 @@
 <div *ngIf="searchResults">
   <div *ngFor="let res of searchResults">
     <div class="row">
-
       <div class="col-md-6">
         <div class="search-res well searching">
-          <img *ngIf="!res.poster_path" src="assets/notfound.jpeg" />
-          <img *ngIf="res.poster_path" src="https://image.tmdb.org/t/p/w500{{res.poster_path}}" />
+        <a [routerLink]="['/movie', res.id]">   <img *ngIf="!res.poster_path" src="assets/notfound.jpeg" /> </a>
+        <a [routerLink]="['/movie', res.id]">  <img *ngIf="res.poster_path" src="https://image.tmdb.org/t/p/w500{{res.poster_path}}" /> </a>
           <div>
           <h4><a [routerLink]="['/movie', res.id]">{{res.title}}</a></h4>
           <p>{{res.release_date}} <span>Rating:</span> <span class="rating"> {{res.vote_average}}</span> <span>Genre:</span> <strong *ngFor="let genre of res.genre_ids"> {{getGenre(genre)}}</strong> </p>

@@ -2,12 +2,15 @@
   loading
 </div>
 <div *ngIf="movie">
-  <header class="movie-header">
-    <div *ngIf="!poster_path">
-      labas
+    <div *ngIf="!movie.poster_path">
+      <img src="assets/notfound.jpeg" class="movie-pic">
     </div>
+  <div class="movie-cont">
+    <h3>{{movie.title}}</h3>
     <div *ngIf="movie.poster_path">
       <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="movie-thumb">
     </div>
-  </header>
+    <p><strong *ngFor="let genre of movie.genres">{{getGenre(genre.id)}} </strong></p>
+    <p class="overview">{{movie.overview}}</p>
+  </div>
 </div>

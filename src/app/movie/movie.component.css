@@ -1,0 +1,22 @@
+.movie-pic {
+  width: 80px;
+  height: auto;
+  float: left;
+}
+
+.movie-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+}
+
+.overview {
+  margin-top: 20px;
+  background-color: #E6EBE0;
+  padding: 20px;
+}
